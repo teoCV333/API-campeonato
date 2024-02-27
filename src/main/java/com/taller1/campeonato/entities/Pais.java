@@ -21,9 +21,9 @@ import lombok.ToString;
 public class Pais {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "secuencia_campeonato")
-    @GenericGenerator(name = "secuencia_campeonato", strategy = "increment")
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "secuencia_pais")
+    @GenericGenerator(name = "secuencia_pais", strategy = "increment")
+    private Integer id;
 
     @Column(length = 100, unique = true)
     private String pais;
