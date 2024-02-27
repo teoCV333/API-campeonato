@@ -3,6 +3,7 @@ package com.taller1.campeonato.entities;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -11,6 +12,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
+@Builder
 public class TablaPosicion {
     
     @Id
@@ -21,31 +23,38 @@ public class TablaPosicion {
     private String pais;
 
     @Column
-    private Integer pJ;
-
-    @Column(nullable = true)
-    private Integer pG;
+    @Builder.Default
+    private Integer pJ = 0;
 
     @Column
-    private Integer pE;
+    @Builder.Default
+    private Integer pG = 0;
 
     @Column
-    private Integer pP;
+    @Builder.Default
+    private Integer pE = 0;
 
     @Column
-    private Integer gF;
+    @Builder.Default
+    private Integer pP = 0;
 
     @Column
-    private Integer gC;
+    @Builder.Default
+    private Integer gF = 0;
 
-    @Column(nullable = true)
-    private Integer puntos;
+    @Column
+    @Builder.Default
+    private Integer gC = 0;
+
+    @Column
+    @Builder.Default
+    private Integer puntos = 0;
 
     public TablaPosicion() {
 
     }
 
-    public TablaPosicion(int id, String pais, int pJ, Integer pG, int pE, int pP, int gF, int gC, int puntos) {
+    public TablaPosicion(Integer id, String pais, Integer pJ, Integer pG, Integer pE, Integer pP, Integer gF, Integer gC, Integer puntos) {
         this.id = id;
         this.pais = pais;
         this.pJ = pJ;
